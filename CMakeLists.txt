@@ -21,7 +21,7 @@ macro(update dir url branch)
     )
     message("${OUTPUT}")
   endif()
-  if(UPDATE)
+  if($ENV{UPDATE})
     message("Updating ${url}")
     execute_process(
       COMMAND ${GIT_EXECUTABLE} pull
