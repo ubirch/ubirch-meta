@@ -1,0 +1,8 @@
+build
+ubirch-arm-toolchain
+ubirch-board-firmware
+ubirch-kinetis-sdk
+ubirch-kinetis-sdk-package
+ubirch-wolfssl
+ubirch-wolfssl-package
+.idea
