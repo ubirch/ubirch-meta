@@ -1,12 +1,31 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ubirch-meta NONE)
 
-include(ExternalProject)
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "MinSizeRel")
 endif ()
-set(MCU "MK82F25615")
-set(SDK "SDK_2.0_MK82FN256xxx15")
+
+# set board type (ubirch#1 r0.2, FRDM-K82F, FRDM-KL82Z*)
+# (* not yet implemented)
+# you don't need to set it here, use 'cmake -DBOARD=<board> ..' during setup
+# the board setting will determine the used MCU
+if (NOT BOARD)
+  set(BOARD "ubirch-1")
+  #  set(BOARD "FRDM-K82F")
+  #  set(BOARD "FRDM-KL82Z")
+endif ()
+message(STATUS "selected board: ${BOARD}")
+
+# we set the used MCU based on the board
+if (BOARD MATCHES "ubirch-1|FRDM-K82F")
+  set(MCU "MK82F25615")
+  set(SDK "SDK_2.0_MK82FN256xxx15")
+elseif (BOARD MATCHES "FRDM-KL82Z")
+  set(MCU "MKL82Z7")
+  set(SDK "SDK_1.3_MKL82Z")
+endif ()
+
+project(ubirch-meta NONE)
+include(ExternalProject)
 
 find_package(Git)
 if (NOT GIT_FOUND)
