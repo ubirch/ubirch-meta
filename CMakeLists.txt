@@ -13,7 +13,7 @@ if (NOT BOARD)
   #  set(BOARD "FRDM-K82F")
   #  set(BOARD "FRDM-KL82Z")
 endif ()
-message(STATUS "selected board: ${BOARD}")
+message(STATUS "ubirch: selected board: ${BOARD}")
 
 # we set the used MCU based on the board
 if (BOARD MATCHES "ubirch-1|FRDM-K82F")
@@ -23,6 +23,8 @@ elseif (BOARD MATCHES "FRDM-KL82Z")
   set(MCU "MKL82Z7")
   set(SDK "SDK_1.3_MKL82Z")
 endif ()
+message(STATUS "ubirch: selected MCU  : ${MCU}")
+message(STATUS "ubirch: selected SDK  : ${SDK}")
 
 project(ubirch-meta NONE)
 include(ExternalProject)
@@ -32,17 +34,23 @@ if (NOT GIT_FOUND)
   message(FATAL_ERROR "No git executable found!")
 endif ()
 
-macro(update dir url branch)
+function(update dir url branch)
   if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${dir}/.git)
     message("Cloning ${url}")
     execute_process(
-      COMMAND ${GIT_EXECUTABLE} clone --branch ${branch} --single-branch --depth 1 ${url} ${dir}
+      COMMAND ${GIT_EXECUTABLE} clone ${url} ${dir}
       WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
       OUTPUT_VARIABLE OUTPUT
     )
     message("${OUTPUT}")
-  endif()
-  if($ENV{UPDATE})
+  endif ()
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} checkout ${branch}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${dir}
+    OUTPUT_VARIABLE OUTPUT
+  )
+  message("${OUTPUT}")
+  if ($ENV{UPDATE})
     message("Updating ${url}")
     execute_process(
       COMMAND ${GIT_EXECUTABLE} pull
@@ -50,8 +58,8 @@ macro(update dir url branch)
       OUTPUT_VARIABLE OUTPUT
     )
     message("${OUTPUT}")
-  endif()
-endmacro()
+  endif ()
+endfunction()
 
 # Toolchain (download only)
 update(ubirch-arm-toolchain git@gitlab.com:ubirch/ubirch-arm-toolchain.git master)
