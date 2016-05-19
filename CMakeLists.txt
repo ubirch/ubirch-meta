@@ -83,7 +83,6 @@ update(ubirch-kinetis-sdk-package git@gitlab.com:ubirch/ubirch-kinetis-sdk-packa
 ExternalProject_Add(ubirch-kinetis-sdk-package
   SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-kinetis-sdk-package
   DEPENDS ubirch-arm-toolchain ubirch-kinetis-sdk
-  BINARY_DIR KSDK_${MCU}
   CMAKE_ARGS
   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
   -DSDK_ROOT=${SDK_ROOT}
@@ -100,7 +99,6 @@ update(ubirch-wolfssl-package git@gitlab.com:ubirch/ubirch-wolfssl-package maste
 ExternalProject_Add(ubirch-wolfssl-package
   SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-wolfssl-package
   DEPENDS ubirch-kinetis-sdk-package ubirch-wolfssl
-  BINARY_DIR WOLFSSL_${MCU}
   CMAKE_ARGS
   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
   -DMCU=${MCU}
@@ -117,7 +115,6 @@ update(ubirch-board-firmware git@gitlab.com:ubirch/ubirch-board-firmware master)
 ExternalProject_Add(ubirch-board-firmware
   SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware
   DEPENDS ubirch-kinetis-sdk-package ubirch-wolfssl-package
-  BINARY_DIR FIRMWARE_${MCU}
   CMAKE_ARGS
   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
   -DMCU=${MCU}
