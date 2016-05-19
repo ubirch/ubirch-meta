@@ -3,7 +3,8 @@
 This is a special repository, created to make building the toolchain simpler but compiling all configurations
 in one got and making the targets available for other projects.
 
-The following commands will create the default toolchain for board `ubirch#1 r0.2`, MCU `K82F`:
+The following commands will create the default toolchain for all known boards `ubirch#1 r0.2` and 'FRDM-K82F', as
+well as all known MCUs (only `K82F25615`) for all types of configuration (`Debug`, `Release`, `RelWithDebInfo`, `MinSizeRel`):
 
 ```
 git clone git@gitlab.com:ubirch/ubirch-meta.git
@@ -14,7 +15,8 @@ cd ubirch-meta
 If at a later stage you would like to re-run the build because some of the libraries/repositories have changed,
 run `./build.sh -u -a` which includes a `git pull` step.
 
-> The build script will clone the source directories directly into this directory. Ignore them!
+> The build script will clone the source directories directly into this directory. Ignore them unless you want to work on them!
+> Don't forget to commit changes back into the repository.
 
 ## Dependencies
 

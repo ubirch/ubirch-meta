@@ -7,7 +7,7 @@ else BUILDS="MinSizeRel"
 fi
 for BUILD_TYPE in $BUILDS
 do
-  if [ ! -d build/$BUILD_TYPE ]
+  if [ "$UPDATE" == "1" -o ! -d build/$BUILD_TYPE ]
   then
     echo "Preparing build: $BUILD_TYPE"
     mkdir -p build/$BUILD_TYPE
