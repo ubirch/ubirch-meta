@@ -26,14 +26,14 @@ run `./build.sh -u -a` which includes a `git pull` step.
 - `ubirch-board-firmwate` - the board firmware package builder
 
 The final `ubirch-board-firmware` can then be used in other projects,
-importing it using `require(PACKAGE ubirch MCU ${MCU} VERSION 1.0)`
+importing it using `require(PACKAGE ubirch BOARD ${BOARD} VERSION 1.0)`
 
 ```
-ubirch-kinetis-sdk ----+-- ubirch-kinetis-sdk-package --+
-                       |                                |
-ubirch-arm-toolchain --+--------------------------------+-- ubirch-board-firmware
-                       |                                |
-ubirch-wolfssl --------+-- ubirch-wolfssl-package ------+
+ubirch-arm-toolchain --+--------------------------------+---------------------------+
+                       |                                |                           |
+ubirch-kinetis-sdk ----+-- ubirch-kinetis-sdk-package --+                           |
+                                                        |                           |
+ubirch-wolfssl -----------------------------------------+--ubirch-wolfssl-package --+-- ubirch-board-firmware
 ```
 
 ## License
