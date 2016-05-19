@@ -7,7 +7,13 @@ else BUILDS="MinSizeRel"
 fi
 for BUILD_TYPE in $BUILDS
 do
-  mkdir -p build/$BUILD_TYPE
-  (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE; make)
+  if [ ! -d build/$BUILD_TYPE ]
+  then
+    echo "Preparing build: $BUILD_TYPE"
+    mkdir -p build/$BUILD_TYPE
+    (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE)
+  fi
+  echo "Building: $BUILD_TYPE"
+  (cd build/$BUILD_TYPE; make)
   unset UPDATE
 done
