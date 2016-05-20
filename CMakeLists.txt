@@ -5,7 +5,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif ()
 
 set(MCUS "MK82F25615") # later add "MKL82Z7"
-set(BOARDS "ubirch-1" "FRDM-K82F") # later add "FRDM-KL82Z"
+set(BOARDS "ubirch1r02" "FRDM-K82F") # later add "FRDM-KL82Z"
 
 project(ubirch-meta NONE)
 include(ExternalProject)
@@ -98,7 +98,7 @@ get_filename_component(WOLFSSL_ROOT "${SOURCE_DIR}" REALPATH)
 # Build BOARD dependend packages
 foreach (BOARD ${BOARDS})
   # we set the used MCU based on the board
-  if (BOARD MATCHES "ubirch-1|FRDM-K82F")
+  if (BOARD MATCHES "ubirch1|FRDM-K82F")
     set(MCU "MK82F25615")
     set(SDK "${SDK_ROOT}/SDK_2.0_MK82FN256xxx15")
   elseif (BOARD MATCHES "FRDM-KL82Z")
