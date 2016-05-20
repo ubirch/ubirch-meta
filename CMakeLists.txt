@@ -110,7 +110,7 @@ foreach (BOARD ${BOARDS})
   if (NOT TARGET ubirch-kinetis-sdk-package-${MCU})
     ExternalProject_Add(ubirch-kinetis-sdk-package-${MCU}
       DEPENDS ubirch-arm-toolchain ubirch-kinetis-sdk
-      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/ksdk
+      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/ksdk-${MCU}
       SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-kinetis-sdk-package
       CMAKE_ARGS
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -128,7 +128,7 @@ foreach (BOARD ${BOARDS})
   if (NOT TARGET ubirch-wolfssl-package-${MCU})
     ExternalProject_Add(ubirch-wolfssl-package-${MCU}
       DEPENDS ubirch-kinetis-sdk-package-${MCU} ubirch-wolfssl
-      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/wssl
+      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/wssl-${MCU}
       SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-wolfssl-package
       CMAKE_ARGS
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -144,7 +144,7 @@ foreach (BOARD ${BOARDS})
 
   ExternalProject_Add(ubirch-board-firmware-${BOARD}
     DEPENDS ubirch-kinetis-sdk-package-${MCU} ubirch-wolfssl-package-${MCU}
-    BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/fw
+    BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/fw-${BOARD}
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware
     CMAKE_ARGS
     -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
