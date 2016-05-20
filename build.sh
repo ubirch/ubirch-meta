@@ -14,6 +14,6 @@ do
     (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE)
   fi
   echo "Building: $BUILD_TYPE"
-  (cd build/$BUILD_TYPE; make)
+  (cd build/$BUILD_TYPE; make clean all)
   unset UPDATE
 done
