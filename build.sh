@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # do an out-of-source build for all configurations
 BUILDS="MinSizeRel"
 for arg in "$@"
@@ -6,21 +6,31 @@ do
   case $arg in
     -c|--clean)
       echo "Cleaning build directory and package registry."
-      echo "Execute the following commands, after review:"
       [ -d `dirname $0`/build ] && echo rm -r `dirname $0`/build
       [ -d $HOME/.cmake/packages/KinetisSDK ] && echo rm -vr $HOME/.cmake/packages/KinetisSDK
       [ -d $HOME/.cmake/packages/ubirch ] && echo rm -vr $HOME/.cmake/packages/ubirch
       [ -d $HOME/.cmake/packages/ubirch-crypto ] && echo rm -vr $HOME/.cmake/packages/ubirch-crypto
       [ -d $HOME/.cmake/packages/wolfSSL ] && echo rm -vr $HOME/.cmake/packages/wolfSSL
-      exit
+      echo -n "Execute remove commands? (type 'yes') "
+      read yesno
+      if [ "$yesno" == "yes" ]; then
+        [ -d `dirname $0`/build ] && echo rm -r `dirname $0`/build
+        [ -d $HOME/.cmake/packages/KinetisSDK ] && echo rm -vr $HOME/.cmake/packages/KinetisSDK
+        [ -d $HOME/.cmake/packages/ubirch ] && echo rm -vr $HOME/.cmake/packages/ubirch
+        [ -d $HOME/.cmake/packages/ubirch-crypto ] && echo rm -vr $HOME/.cmake/packages/ubirch-crypto
+        [ -d $HOME/.cmake/packages/wolfSSL ] && echo rm -vr $HOME/.cmake/packages/wolfSSL
+      else
+        echo "Exiting."
+        exit
+      fi
       ;;
-    -u|--update) 
+    -u|--update)
       UPDATE="1"
       shift
       ;;
-    -a) 
+    -a)
       BUILDS="RelWithDebInfo MinSizeRel Release Debug"
-      shift 
+      shift
       ;;
     *)
       ;;
