@@ -15,6 +15,9 @@ cd ubirch-meta
 If at a later stage you would like to re-run the build because some of the libraries/repositories have changed,
 run `./build.sh -u -a` which includes a `git pull` step.
 
+For running a complete rebuild, cleaning the registry, run `./build.sh -c -u -a`, which will prompt you before
+executing the `rm` commands for cleanup, then update the repository and do a complete rebuild.
+
 > The build script will clone the source directories directly into this directory. Ignore them unless you want to work on them!
 > Don't forget to commit changes back into the repository.
 

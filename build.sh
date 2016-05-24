@@ -14,11 +14,11 @@ do
       echo -n "Execute remove commands? (type 'yes') "
       read yesno
       if [ "$yesno" == "yes" ]; then
-        [ -d `dirname $0`/build ] && echo rm -r `dirname $0`/build
-        [ -d $HOME/.cmake/packages/KinetisSDK ] && echo rm -vr $HOME/.cmake/packages/KinetisSDK
-        [ -d $HOME/.cmake/packages/ubirch ] && echo rm -vr $HOME/.cmake/packages/ubirch
-        [ -d $HOME/.cmake/packages/ubirch-crypto ] && echo rm -vr $HOME/.cmake/packages/ubirch-crypto
-        [ -d $HOME/.cmake/packages/wolfSSL ] && echo rm -vr $HOME/.cmake/packages/wolfSSL
+        [ -d `dirname $0`/build ] && rm -r `dirname $0`/build
+        [ -d $HOME/.cmake/packages/KinetisSDK ] && rm -vr $HOME/.cmake/packages/KinetisSDK
+        [ -d $HOME/.cmake/packages/ubirch ] && echo -vr $HOME/.cmake/packages/ubirch
+        [ -d $HOME/.cmake/packages/ubirch-crypto ] && rm -vr $HOME/.cmake/packages/ubirch-crypto
+        [ -d $HOME/.cmake/packages/wolfSSL ] &&  rm -vr $HOME/.cmake/packages/wolfSSL
       else
         echo "Exiting."
         exit
