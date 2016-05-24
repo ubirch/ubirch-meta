@@ -1,5 +1,6 @@
 build
 ubirch-arm-toolchain
+ubirch-board-crypto
 ubirch-board-firmware
 ubirch-kinetis-sdk
 ubirch-kinetis-sdk-package

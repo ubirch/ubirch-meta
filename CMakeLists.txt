@@ -110,7 +110,7 @@ foreach (BOARD ${BOARDS})
   if (NOT TARGET ubirch-kinetis-sdk-package-${MCU})
     ExternalProject_Add(ubirch-kinetis-sdk-package-${MCU}
       DEPENDS ubirch-arm-toolchain ubirch-kinetis-sdk
-      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/ksdk-${MCU}
+      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/${MCU}/ksdk
       SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-kinetis-sdk-package
       CMAKE_ARGS
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -118,7 +118,6 @@ foreach (BOARD ${BOARDS})
       -DSDK_ROOT=${SDK}
       -DMCU=${MCU}
       DOWNLOAD_COMMAND ""
-      BUILD_COMMAND "${CMAKE_MAKE_PROGRAM}"
       INSTALL_COMMAND ""
       UPDATE_DISCONNECTED ${DO_UPDATE}
       )
@@ -128,7 +127,7 @@ foreach (BOARD ${BOARDS})
   if (NOT TARGET ubirch-wolfssl-package-${MCU})
     ExternalProject_Add(ubirch-wolfssl-package-${MCU}
       DEPENDS ubirch-kinetis-sdk-package-${MCU} ubirch-wolfssl
-      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/wssl-${MCU}
+      BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/${MCU}/wssl
       SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-wolfssl-package
       CMAKE_ARGS
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -136,22 +135,33 @@ foreach (BOARD ${BOARDS})
       -DMCU=${MCU}
       -DWOLFSSL_ROOT=${WOLFSSL_ROOT}
       DOWNLOAD_COMMAND ""
-      BUILD_COMMAND "${CMAKE_MAKE_PROGRAM}"
       INSTALL_COMMAND ""
       UPDATE_DISCONNECTED ${DO_UPDATE}
       )
   endif ()
 
   ExternalProject_Add(ubirch-board-firmware-${BOARD}
-    DEPENDS ubirch-kinetis-sdk-package-${MCU} ubirch-wolfssl-package-${MCU}
-    BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/fw-${BOARD}
+    DEPENDS ubirch-kinetis-sdk-package-${MCU}
+    BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/${BOARD}/fw
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware
     CMAKE_ARGS
     -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
     -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
     -DBOARD=${BOARD}
     DOWNLOAD_COMMAND ""
-#    BUILD_COMMAND "${CMAKE_MAKE_PROGRAM}"
+    INSTALL_COMMAND ""
+    UPDATE_DISCONNECTED ${DO_UPDATE}
+    )
+
+  ExternalProject_Add(ubirch-crypto-${BOARD}
+    DEPENDS ubirch-board-firmware-${BOARD} ubirch-wolfssl-package-${MCU}
+    BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/${BOARD}/crypto
+    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-crypto
+    CMAKE_ARGS
+    -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    -DBOARD=${BOARD}
+    DOWNLOAD_COMMAND ""
     INSTALL_COMMAND ""
     UPDATE_DISCONNECTED ${DO_UPDATE}
     )

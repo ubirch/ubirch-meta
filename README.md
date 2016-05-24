@@ -22,20 +22,34 @@ run `./build.sh -u -a` which includes a `git pull` step.
 
 - `ubirch-arm-toolchain` - needed for a all build processes
 - `ubirch-kinetis-sdk` - a repository containing the licensed SDK (from [NXP](kex.nxp.com))
-- `ubirch-wolfssl` - a fork of the wolfSSL repository with patches for Kinetis SDK 2.0
 - `ubirch-kinetis-sdk-package` - the Kinetis SDK package builder
+- __`ubirch-board-firmware`__ - the board firmware package builder
+- `ubirch-wolfssl` - a fork of the wolfSSL repository with patches for Kinetis SDK 2.0
 - `ubirch-wolfssl-package` - the wolfSSL package builder
-- `ubirch-board-firmwate` - the board firmware package builder
+- __`ubirch-board-crypto`__ - board specific crypto layer
 
-The final `ubirch-board-firmware` can then be used in other projects,
-importing it using `require(PACKAGE ubirch BOARD ${BOARD} VERSION 1.0)`
+The final `ubirch-board-firmware` and `ubirch-crypto` then be used in other projects,
+importing it using:
 
 ```
-ubirch-arm-toolchain --+--------------------------------+---------------------------+
-                       |                                |                           |
-ubirch-kinetis-sdk ----+-- ubirch-kinetis-sdk-package --+                           |
-                                                        |                           |
-ubirch-wolfssl -----------------------------------------+--ubirch-wolfssl-package --+-- ubirch-board-firmware
+require(PACKAGE ubirch BOARD ${BOARD} VERSION 1.0)
+require(PACKAGE crypto BOARD ${BOARD} VERSION 1.0)
+```
+
+Dependency Graph (firmware):
+
+```
+ubirch-arm-toolchain --+--------------------------------+
+                       |                                |
+ubirch-kinetis-sdk ----+-- ubirch-kinetis-sdk-package --+-- [ubirch-board-firmware]
+```
+
+Dependency Graph (crypto support, requires `ubirch-board-firmware`):
+
+```
+[ubirch-board-firmware] ----------------------------+
+                                                    |
+ubirch-wolfssl ----------- ubirch-wolfssl-package --+-- [ubirch-board-crypto]
 ```
 
 ## License
