@@ -1,10 +1,32 @@
 #! /bin/sh
 # do an out-of-source build for all configurations
-if [ "$1" == "-u" ]; then export UPDATE="1"; shift; fi
-if [ "$1" == "-a" ]
-then BUILDS="RelWithDebInfo MinSizeRel Release Debug"
-else BUILDS="MinSizeRel"
-fi
+BUILDS="MinSizeRel"
+for arg in "$@"
+do
+  case $arg in
+    -c|--clean)
+      echo "Cleaning build directory and package registry."
+      echo "Execute the following commands, after review:"
+      [ -d `dirname $0`/build ] && echo rm -r `dirname $0`/build
+      [ -d $HOME/.cmake/packages/KinetisSDK ] && echo rm -vr $HOME/.cmake/packages/KinetisSDK
+      [ -d $HOME/.cmake/packages/ubirch ] && echo rm -vr $HOME/.cmake/packages/ubirch
+      [ -d $HOME/.cmake/packages/ubirch-crypto ] && echo rm -vr $HOME/.cmake/packages/ubirch-crypto
+      [ -d $HOME/.cmake/packages/wolfSSL ] && echo rm -vr $HOME/.cmake/packages/wolfSSL
+      exit
+      ;;
+    -u|--update) 
+      UPDATE="1"
+      shift
+      ;;
+    -a) 
+      BUILDS="RelWithDebInfo MinSizeRel Release Debug"
+      shift 
+      ;;
+    *)
+      ;;
+  esac
+done
+
 for BUILD_TYPE in $BUILDS
 do
   if [ "$UPDATE" == "1" -o ! -d build/$BUILD_TYPE ]
