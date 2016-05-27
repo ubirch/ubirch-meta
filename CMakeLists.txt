@@ -56,6 +56,8 @@ update(ubirch-kinetis-sdk-package git@gitlab.com:ubirch/ubirch-kinetis-sdk-packa
 update(ubirch-wolfssl-package git@gitlab.com:ubirch/ubirch-wolfssl-package master)
 # ubirch#1 Board Firmware Package
 update(ubirch-board-firmware git@gitlab.com:ubirch/ubirch-board-firmware master)
+# ubirch#1 Board Crypto Package
+update(ubirch-board-crypto git@gitlab.com:ubirch/ubirch-board-crypto master)
 
 # Downloaded repositories added as dependencies
 

@@ -6,6 +6,11 @@ in one got and making the targets available for other projects.
 The following commands will create the default toolchain for all known boards `ubirch#1 r0.2` and 'FRDM-K82F', as
 well as all known MCUs (only `K82F25615`) for all types of configuration (`Debug`, `Release`, `RelWithDebInfo`, `MinSizeRel`):
 
+
+```
+brew tap armmbed/formulae
+brew install arm-none-eabi-gcc
+```
 ```
 git clone git@gitlab.com:ubirch/ubirch-meta.git
 cd ubirch-meta
