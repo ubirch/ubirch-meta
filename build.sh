@@ -43,7 +43,7 @@ do
   then
     echo "Preparing build: $BUILD_TYPE"
     mkdir -p build/$BUILD_TYPE
-    (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE)
+    (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DUPDATE=1)
   fi
   echo "Building: $BUILD_TYPE"
   (cd build/$BUILD_TYPE; make clean all)
