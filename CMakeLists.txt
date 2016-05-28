@@ -68,7 +68,7 @@ ExternalProject_Add(ubirch-arm-toolchain
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
   CONFIGURE_COMMAND ""
-  UPDATE_DISCONNECTED ${DO_UPDATE}
+  UPDATE_DISCONNECTED 1
   )
 ExternalProject_Get_Property(ubirch-arm-toolchain SOURCE_DIR)
 get_filename_component(TOOLCHAIN_FILE "${SOURCE_DIR}/cmake/ubirch-arm-gcc-toolchain.cmake" REALPATH)
@@ -80,7 +80,7 @@ ExternalProject_Add(ubirch-kinetis-sdk
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
   CONFIGURE_COMMAND ""
-  UPDATE_DISCONNECTED ${DO_UPDATE}
+  UPDATE_DISCONNECTED 1
   )
 ExternalProject_Get_Property(ubirch-kinetis-sdk SOURCE_DIR)
 get_filename_component(SDK_ROOT "${SOURCE_DIR}" REALPATH)
@@ -92,7 +92,7 @@ ExternalProject_Add(ubirch-wolfssl
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
   CONFIGURE_COMMAND ""
-  UPDATE_DISCONNECTED ${DO_UPDATE}
+  UPDATE_DISCONNECTED 1
   )
 ExternalProject_Get_Property(ubirch-wolfssl SOURCE_DIR)
 get_filename_component(WOLFSSL_ROOT "${SOURCE_DIR}" REALPATH)
@@ -121,7 +121,7 @@ foreach (BOARD ${BOARDS})
       -DMCU=${MCU}
       DOWNLOAD_COMMAND ""
       INSTALL_COMMAND ""
-      UPDATE_DISCONNECTED ${DO_UPDATE}
+      UPDATE_DISCONNECTED 1
       )
   endif ()
 
@@ -138,7 +138,7 @@ foreach (BOARD ${BOARDS})
       -DWOLFSSL_ROOT=${WOLFSSL_ROOT}
       DOWNLOAD_COMMAND ""
       INSTALL_COMMAND ""
-      UPDATE_DISCONNECTED ${DO_UPDATE}
+      UPDATE_DISCONNECTED 1
       )
   endif ()
 
@@ -152,7 +152,7 @@ foreach (BOARD ${BOARDS})
     -DBOARD=${BOARD}
     DOWNLOAD_COMMAND ""
     INSTALL_COMMAND ""
-    UPDATE_DISCONNECTED ${DO_UPDATE}
+    UPDATE_DISCONNECTED 1
     )
 
   ExternalProject_Add(ubirch-crypto-${BOARD}
@@ -165,6 +165,6 @@ foreach (BOARD ${BOARDS})
     -DBOARD=${BOARD}
     DOWNLOAD_COMMAND ""
     INSTALL_COMMAND ""
-    UPDATE_DISCONNECTED ${DO_UPDATE}
+    UPDATE_DISCONNECTED 1
     )
 endforeach ()
