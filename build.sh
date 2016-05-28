@@ -1,6 +1,7 @@
 #! /bin/bash
 # do an out-of-source build for all configurations
 BUILDS="MinSizeRel"
+UPDATE="0"
 for arg in "$@"
 do
   case $arg in
