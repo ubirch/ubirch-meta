@@ -45,19 +45,19 @@ endfunction()
 # Update or clone repositories
 
 # Toolchain (download only)
-update(ubirch-arm-toolchain git@gitlab.com:ubirch/ubirch-arm-toolchain.git master)
+update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git master)
 # Kinetis SDK (download only)
-update(ubirch-kinetis-sdk git@gitlab.com:ubirch/ubirch-kinetis-sdk.git master)
+update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git master)
 # WolfSSL (download only)
-update(ubirch-wolfssl git@gitlab.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
+update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
 # Kinetis SDK Package
-update(ubirch-kinetis-sdk-package git@gitlab.com:ubirch/ubirch-kinetis-sdk-package.git master)
+update(ubirch-kinetis-sdk-package git@github.com:ubirch/ubirch-kinetis-sdk-package.git master)
 # WolfSSL (wolfcrypt) Package
-update(ubirch-wolfssl-package git@gitlab.com:ubirch/ubirch-wolfssl-package master)
+update(ubirch-wolfssl-package git@github.com:ubirch/ubirch-wolfssl-package master)
 # ubirch#1 Board Firmware Package
-update(ubirch-board-firmware git@gitlab.com:ubirch/ubirch-board-firmware master)
+update(ubirch-board-firmware git@github.com:ubirch/ubirch-board-firmware master)
 # ubirch#1 Board Crypto Package
-update(ubirch-board-crypto git@gitlab.com:ubirch/ubirch-board-crypto master)
+update(ubirch-board-crypto git@github.com:ubirch/ubirch-board-crypto master)
 
 # Downloaded repositories added as dependencies
 

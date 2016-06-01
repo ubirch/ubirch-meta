@@ -12,7 +12,7 @@ brew tap armmbed/formulae
 brew install arm-none-eabi-gcc
 ```
 ```
-git clone git@gitlab.com:ubirch/ubirch-meta.git
+git clone git@github.com:ubirch/ubirch-meta.git
 cd ubirch-meta
 ./build.sh -a
 ```
