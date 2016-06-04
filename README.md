@@ -42,6 +42,8 @@ importing it using:
 require(PACKAGE ubirch BOARD ${BOARD} VERSION 1.0)
 require(PACKAGE crypto BOARD ${BOARD} VERSION 1.0)
 ```
+> See [ubirch-project-template](https://github.com/ubirch/ubirch-project-template) for an example how to use the toolchain
+> in your own project. Other examples can be found in our [ubirch github repository](https://github.com/ubirch).
 
 Dependency Graph (firmware):
 
