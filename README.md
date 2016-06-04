@@ -27,13 +27,13 @@ executing the `rm` commands for cleanup, then update the repository and do a com
 
 ## Dependencies
 
-- `ubirch-arm-toolchain` - needed for a all build processes
-- `ubirch-kinetis-sdk` - a repository containing the licensed SDK (from [NXP](kex.nxp.com))
-- `ubirch-kinetis-sdk-package` - the Kinetis SDK package builder
-- __`ubirch-board-firmware`__ - the board firmware package builder
-- `ubirch-wolfssl` - a fork of the wolfSSL repository with patches for Kinetis SDK 2.0
-- `ubirch-wolfssl-package` - the wolfSSL package builder
-- __`ubirch-board-crypto`__ - board specific crypto layer
+- [`ubirch-arm-toolchain`](https://github.com/ubirch/ubirch-arm-toolchain) - needed for a all build processes
+- [`ubirch-kinetis-sdk`](https://github.com/ubirch/ubirch-kinetis-sdk) - a repository containing the licensed SDK (from [NXP](kex.nxp.com))
+- [`ubirch-kinetis-sdk-package`](https://github.com/ubirch/ubirch-kinetis-sdk-package) - the Kinetis SDK package builder
+- __[`ubirch-board-firmware`](https://github.com/ubirch/ubirch-board-firmware)__ - the board firmware package builder
+- [`ubirch-wolfssl`](https://github.com/ubirch/ubirch-wolfssl) - a fork of the wolfSSL repository with patches for Kinetis SDK 2.0
+- [`ubirch-wolfssl-package`](https://github.com/ubirch/ubirch-wolfssl-package) - the wolfSSL package builder
+- __[`ubirch-board-crypto`](https://github.com/ubirch/ubirch-board-crypto)__ - board specific crypto layer
 
 The final [`ubirch-board-firmware`](https://github.com/ubirch/ubirch-board-firmware) and [`ubirch-crypto`](https://github.com/ubirch/ubirch-crypto) then be used in other projects,
 importing it using:
