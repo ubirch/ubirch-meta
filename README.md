@@ -1,7 +1,7 @@
 # ubirch meta-project (superbuild)
 
-This is a special repository, created to make building the toolchain simpler but compiling all configurations
-in one got and making the targets available for other projects.
+This is a special repository, created to make building the toolchain simpler by compiling all configurations
+in one go and making the targets available for other projects.
 
 The following commands will create the default toolchain for all known boards `ubirch#1 r0.2` and 'FRDM-K82F', as
 well as all known MCUs (only `K82F25615`) for all types of configuration (`Debug`, `Release`, `RelWithDebInfo`, `MinSizeRel`):
