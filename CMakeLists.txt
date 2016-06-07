@@ -161,3 +161,21 @@ foreach (BOARD ${BOARDS})
     INSTALL_COMMAND ""
     )
 endforeach ()
+
+# Generate Documentation for firmware and board
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+  add_custom_target(all-doc ALL
+    ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Generating API documentation with Doxygen" VERBATIM
+    )
+  if (BOARD MATCHES "ubirch1r02")
+    add_custom_command(TARGET doc
+      POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/board/ubirch1r02/ubirch1r02-back.jpg ${CMAKE_CURRENT_BINARY_DIR}/docs/html
+      COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/board/ubirch1r02/ubirch1r02-front.jpg ${CMAKE_CURRENT_BINARY_DIR}/docs/html
+      )
+  endif ()
+endif ()

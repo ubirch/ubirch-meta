@@ -1,0 +1,24 @@
+PROJECT_NAME           = "ubirch firmware documentation"
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_SOURCE_DIR@/docs
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/README.md \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/firmware \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/README.md \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/frdm_k82f \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/ubirch1r02 \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-crypto/ubirch \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-crypto/README.md
+USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_SOURCE_DIR@/README.md
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = @CMAKE_CURRENT_SOURCE_DIR@
+RECURSIVE              = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+JAVADOC_AUTOBRIEF      = YES
+HIDE_FRIEND_COMPOUNDS  = YES
+EXTRACT_STATIC         = YES
+QUIET                  = YES
+SOURCE_BROWSER         = YES
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = __attribute__(x)=
+
