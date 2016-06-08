@@ -43,21 +43,22 @@ function(update dir url branch)
 endfunction()
 
 # Update or clone repositories
+set(BRANCH_TAG "kl82z")
 
 # Toolchain (download only)
-update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git master)
+update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${BRANCH_TAG})
 # Kinetis SDK (download only)
-update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git master)
+update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git ${BRANCH_TAG})
 # WolfSSL (download only)
 update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
 # Kinetis SDK Package
-update(ubirch-kinetis-sdk-package git@github.com:ubirch/ubirch-kinetis-sdk-package.git master)
+update(ubirch-kinetis-sdk-package git@github.com:ubirch/ubirch-kinetis-sdk-package.git ${BRANCH_TAG})
 # WolfSSL (wolfcrypt) Package
-update(ubirch-wolfssl-package git@github.com:ubirch/ubirch-wolfssl-package master)
+update(ubirch-wolfssl-package git@github.com:ubirch/ubirch-wolfssl-package ${BRANCH_TAG})
 # ubirch#1 Board Firmware Package
-update(ubirch-board-firmware git@github.com:ubirch/ubirch-board-firmware master)
+update(ubirch-board-firmware git@github.com:ubirch/ubirch-board-firmware ${BRANCH_TAG})
 # ubirch#1 Board Crypto Package
-update(ubirch-board-crypto git@github.com:ubirch/ubirch-board-crypto master)
+update(ubirch-board-crypto git@github.com:ubirch/ubirch-board-crypto ${BRANCH_TAG})
 
 # Downloaded repositories added as dependencies
 
@@ -98,11 +99,11 @@ get_filename_component(WOLFSSL_ROOT "${SOURCE_DIR}" REALPATH)
 foreach (BOARD ${BOARDS})
   # we set the used MCU based on the board
   if (BOARD MATCHES "ubirch1|FRDM-K82F")
-    set(MCU "MK82F25615" CACHE STRING "" FORCE)
-    set(SDK "${SDK_ROOT}/SDK_2.0_MK82FN256xxx15" CACHE STRING "" FORCE)
+    set(MCU "MK82F25615")
+    set(SDK "${SDK_ROOT}/SDK_2.0_MK82FN256xxx15")
   elseif (BOARD MATCHES "FRDM-KL82Z")
-    set(MCU "MKL82Z7" CACHE STRING "" FORCE)
-    set(SDK "${SDK_ROOT}/SDK_2.0_MKL82Z128xxx7" CACHE STRING "" FORCE)
+    set(MCU "MKL82Z7")
+    set(SDK "${SDK_ROOT}/SDK_2.0_MKL82Z128xxx7")
   endif ()
 
   # create kinetis sdk package (only once for each MCU)
