@@ -4,7 +4,8 @@ This is a special repository, created to make building the toolchain simpler by 
 in one go and making the targets available for other projects.
 
 The following commands will create the default toolchain for all known boards `ubirch#1 r0.2` and 'FRDM-K82F', as
-well as all known MCUs (currently just the [`K82F25615`](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/kinetis-cortex-m-mcus/k-series-performance-m4/k8x-secure/kinetis-k82-150-mhz-hw-cryptographic-co-processor-quadspi-microcontrollers-mcus-based-on-arm-cortex-m4-core:K82_150?fsrch=1&sr=2&pageNum=1), [`KL82Z`](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/kinetis-cortex-m-mcus/l-series-ultra-low-power-m0-plus/kinetis-kl8x-72-96-mhz-secure-ultra-low-power-microcontrollers-mcus-based-on-arm-cortex-m0-plus-core:KL8x?fsrch=1&sr=3&pageNum=1) coming soon) for all types of configuration (`Debug`, `Release`, `RelWithDebInfo`, `MinSizeRel`):
+well as all known MCUs (currently just the [`K82F25615`](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/kinetis-cortex-m-mcus/k-series-performance-m4/k8x-secure/kinetis-k82-150-mhz-hw-cryptographic-co-processor-quadspi-microcontrollers-mcus-based-on-arm-cortex-m4-core:K82_150?fsrch=1&sr=2&pageNum=1),
+[`KL82Z`](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/kinetis-cortex-m-mcus/l-series-ultra-low-power-m0-plus/kinetis-kl8x-72-96-mhz-secure-ultra-low-power-microcontrollers-mcus-based-on-arm-cortex-m0-plus-core:KL8x?fsrch=1&sr=3&pageNum=1)) for all types of configuration (`Debug`, `Release`, `RelWithDebInfo`, `MinSizeRel`):
 
 ```
 brew tap armmbed/formulae
