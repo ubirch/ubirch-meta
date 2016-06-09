@@ -43,7 +43,7 @@ function(update dir url branch)
 endfunction()
 
 # Update or clone repositories
-set(BRANCH_TAG "kl82z")
+set(BRANCH_TAG "master")
 
 # Toolchain (download only)
 update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${BRANCH_TAG})
