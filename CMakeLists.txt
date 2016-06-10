@@ -176,6 +176,5 @@ if (DOXYGEN_FOUND)
     POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware/board/ubirch1r02/ubirch1r02-back.jpg ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware/board/ubirch1r02/ubirch1r02-front.jpg ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/ubirch.png ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
     )
 endif ()
