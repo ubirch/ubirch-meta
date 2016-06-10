@@ -166,7 +166,7 @@ endforeach ()
 # Generate Documentation for firmware and board
 find_package(Doxygen)
 if (DOXYGEN_FOUND)
-  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
   add_custom_target(all-doc ALL
     ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
@@ -176,5 +176,6 @@ if (DOXYGEN_FOUND)
     POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware/board/ubirch1r02/ubirch1r02-back.jpg ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-board-firmware/board/ubirch1r02/ubirch1r02-front.jpg ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/ubirch.png ${CMAKE_CURRENT_SOURCE_DIR}/docs/html
     )
 endif ()
