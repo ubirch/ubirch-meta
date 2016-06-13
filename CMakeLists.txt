@@ -43,22 +43,22 @@ function(update dir url branch)
 endfunction()
 
 # Update or clone repositories
-set(BRANCH_TAG "master")
+set(UBIRCH_RELEASE_TAG "master" CACHE STRING "tag for the current r)
 
 # Toolchain (download only)
-update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${BRANCH_TAG})
+update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${UBIRCH_RELEASE_TAG})
 # Kinetis SDK (download only)
-update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git ${BRANCH_TAG})
+update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git ${UBIRCH_RELEASE_TAG})
 # WolfSSL (download only)
 update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
 # Kinetis SDK Package
-update(ubirch-kinetis-sdk-package git@github.com:ubirch/ubirch-kinetis-sdk-package.git ${BRANCH_TAG})
+update(ubirch-kinetis-sdk-package git@github.com:ubirch/ubirch-kinetis-sdk-package.git ${UBIRCH_RELEASE_TAG})
 # WolfSSL (wolfcrypt) Package
-update(ubirch-wolfssl-package git@github.com:ubirch/ubirch-wolfssl-package ${BRANCH_TAG})
+update(ubirch-wolfssl-package git@github.com:ubirch/ubirch-wolfssl-package ${UBIRCH_RELEASE_TAG})
 # ubirch#1 Board Firmware Package
-update(ubirch-board-firmware git@github.com:ubirch/ubirch-board-firmware ${BRANCH_TAG})
+update(ubirch-board-firmware git@github.com:ubirch/ubirch-board-firmware ${UBIRCH_RELEASE_TAG})
 # ubirch#1 Board Crypto Package
-update(ubirch-board-crypto git@github.com:ubirch/ubirch-board-crypto ${BRANCH_TAG})
+update(ubirch-board-crypto git@github.com:ubirch/ubirch-board-crypto ${UBIRCH_RELEASE_TAG})
 
 # Downloaded repositories added as dependencies
 
