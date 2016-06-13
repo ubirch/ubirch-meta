@@ -43,7 +43,7 @@ function(update dir url branch)
 endfunction()
 
 # Update or clone repositories
-set(UBIRCH_RELEASE_TAG "master" CACHE STRING "tag for the current r)
+set(UBIRCH_RELEASE_TAG "master" CACHE STRING "tag for the current release")
 
 # Toolchain (download only)
 update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${UBIRCH_RELEASE_TAG})
