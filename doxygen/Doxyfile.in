@@ -1,6 +1,7 @@
 PROJECT_NAME           = "ubirch firmware documentation"
 OUTPUT_DIRECTORY       = @CMAKE_CURRENT_SOURCE_DIR@/docs
-INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/README.md \
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/INDEX.md \
+                         @CMAKE_CURRENT_SOURCE_DIR@/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-arm-toolchain/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/firmware \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/README.md \
@@ -11,7 +12,7 @@ INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-crypto/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-kinetis-sdk-package/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-wolfssl-package/README.md
-USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_SOURCE_DIR@/README.md
+USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_SOURCE_DIR@/INDEX.md
 FULL_PATH_NAMES        = YES
 STRIP_FROM_PATH        = @CMAKE_CURRENT_SOURCE_DIR@
 RECURSIVE              = YES

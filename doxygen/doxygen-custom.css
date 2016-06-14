@@ -180,12 +180,15 @@ div.line.glow {
 }
 
 span.lineno {
+  display: none;
+/*
     color: #E8E8E8
     padding-right: 4px;
     text-align: right;
     white-space: pre;
     border-right: 0;
     background-color: inherit;
+*/
 }
 
 div.groupHeader {
