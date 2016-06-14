@@ -20,6 +20,7 @@ still providing enough abstraction to make coding easy.
 3. [Additional Information](#additional)
     1. BOARDS
     2. Development (CMake, Firmware, Crypto)
+    3. [Example Code](https://github.com/ubirch/ubirch-board-examples)
 4. [License](#license)
 
 ## Installation <a id="installation"></a>
@@ -188,6 +189,7 @@ The toolchain libraries and board specific information is available in the indiv
   - [CMake ARM Toolchain](md_ubirch-arm-toolchain_README.html)
   - [Firmware](files.html)
   - [Crypto Support](md_ubirch-board-crypto_README.html)
+- [__Example Code__](https://github.com/ubirch/ubirch-board-examples)
 
 ## License <a id="license"></a>
 
