@@ -1,6 +1,6 @@
 # ubirch board firmware
 
-The [ubirch](http://ubirch.com) is a hardware abstraction layer for different board based on
+The [ubirch board firmware](http://ubirch.com) is a hardware abstraction layer for different board based on
 the [NXP](http://www.nxp.com) [Kinetis SDK v2](http://www.nxp.com/products/software-and-tools/run-time-software/kinetis-software-and-tools/development-platforms-with-mbed/software-development-kit-for-kinetis-mcus:KINETIS-SDK).
 Our main goal is to support the development of IoT applications for the [ubirch platform](http://api.ubirch.com) while
 still providing enough abstraction to make coding easy.
