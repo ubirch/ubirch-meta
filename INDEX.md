@@ -14,7 +14,7 @@ still providing enough abstraction to make coding easy.
         3. [Windows](#install-windows)
     2. [Installing the Toolchain](#toolchain)
 2. [Getting Started](#gettingstarted)
-    1. [Fetch The Template](#fetchtemplate)
+    1. [Install Template Project](#fetchtemplate)
     2. [Compiling](#compiletemplate)
     3. [Flashing](#flashtemplate)
 3. [Additional Information](#additional)
@@ -114,7 +114,7 @@ possibly includes an IDE. [Leo](http://twitter.com/thinkberg)'s choice is curren
 long as it is supported by CMake. One option is [Eclipse CDT](https://eclipse.org/cdt/).
 
 <a name="fetchtemplate"></a>
-### Fetch the template project
+### Install the Template Project
 
 First download our [template project](https://github.com/ubirch/ubirch-project-template)
 ([zip](https://github.com/ubirch/ubirch-project-template/archive/master.zip)) and extract
