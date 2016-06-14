@@ -79,7 +79,7 @@ as well as the [CMake](https://cmake.org/download/) windows installer.
 ### Installing the toolchain
 
 After you've prepared the cross-compilation environment we can start downloading and
-compiling the actual toolchain which contains the libraries, linking helpers and some
+compiling the actual [ubirch toolchain](https://github.com/ubirch/ubirch-meta) which contains the libraries, linking helpers and some
 flashing support.
 
 Currently the build script is only available for Linux and macOS. Feel free to adapt the
