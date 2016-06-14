@@ -23,7 +23,7 @@ still providing enough abstraction to make coding easy.
     3. [Example Code](https://github.com/ubirch/ubirch-board-examples)
 4. [License](#license)
 
-## Installation <a id="installation"></a>
+## Installation <a name="installation"></a>
 
 The toolchain consists of a number of code packages that are cross-compiled on your development
 platform for the target devices. In order to make it as simple as possible to get the toolchain
@@ -31,11 +31,11 @@ up and running we provide a meta project (sometimes called a super-build) that w
 necessary repositories and compile the toolchain for any known MCU and board type.
 
 
-### Install cross compilation environment <a id="crosscompile"></a>
+### Install cross compilation environment <a name="crosscompile"></a>
 
 A number of tools are necessary if you didn't setup a cross compilation environment before:
 
-#### Linux (Ubuntu/Debian) <a id="install-linux"></a>
+#### Linux (Ubuntu/Debian) <a name="install-linux"></a>
 
 ```
 apt-get install git
@@ -47,7 +47,7 @@ apt-get install cgdb
 apt-get install doxygen
 ```
 
-#### macOS <a id="install-macos"></a>
+#### macOS <a name="install-macos"></a>
 
 Install [homebrew](http://brew.sh/) first, it will help greatly! You will also need the
 [Xcode](https://developer.apple.com/xcode/) command line tools, however, homebrew usually
@@ -64,14 +64,14 @@ brew install cgdb
 brew install doxygen
 ```
 
-#### Windows <a id="install-windows"></a>
+#### Windows <a name="install-windows"></a>
 
 Get [Git for Windows](https://git-scm.com/download/win) and install either [MingW](http://www.mingw.org/) or another GNU toolchain. With cmake it may
 even work with the Windows developer tools. However, you will need the
 [Launchpad GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded/+download) installer
 as well as the [CMake](https://cmake.org/download/) windows installer.
 
-### Installing the toolchain <a id="toolchain"></a>
+### Installing the toolchain <a name="toolchain"></a>
 
 After you've prepared the cross-compilation environment we can start downloading and
 compiling the actual toolchain which contains the libraries, linking helpers and some
@@ -100,20 +100,20 @@ If you would like to know more about the structure of the toolchain, take a look
 
 That's it, now you're ready to start with your first project.
 
-## Getting started  <a id="gettingstarte"></a>
+## Getting started  <a name="gettingstarted"></a>
 
 Now you're ready to start your first project. The choice of your development environment
 possibly includes an IDE. [Leo](http://twitter.com/thinkberg)'s choice is currently
 [CLion](https://www.jetbrains.com/clion/) but you can use any C/C++ IDE of your choice as
 long as it is supported by CMake. One option is [Eclipse CDT](https://eclipse.org/cdt/).
 
-### Fetch the template project <a id="fetchtemplate"></a>
+### Fetch the template project <a name="fetchtemplate"></a>
 
 First download our [template project](https://github.com/ubirch/ubirch-project-template)
 ([zip](https://github.com/ubirch/ubirch-project-template/archive/master.zip)) and extract
 it at the location of your choice.
 
-#### Compiling <a id="compiletemplate"></a>
+#### Compiling <a name="compiletemplate"></a>
 
 CMake promotes out-of-source builds, which means your compiled files will go in a
 different location than your sources! Thus we create a `ubirch-project-template-build` directory
@@ -142,7 +142,7 @@ Currently available boards are: `ubirch1r02`, `FRDM-K82F`, `FRDM-KL82Z`
 > Unless you want to change the target board, you should not need to run `cmake` again.
 > Just run `make` as it takes care of changed settings.
 
-### Flashing <a id="flashtemplate"></a>
+### Flashing <a name="flashtemplate"></a>
 
 Flashing the resulting code is also supported by `make`:
 
@@ -155,7 +155,7 @@ Depending on your selected board the toolchain will try to use the default flash
 - `ubirch1r02` - Flashing via USB using the [blhost](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/kinetis-cortex-m-mcus/kinetis-symbols-footprints-and-models/kinetis-bootloader:KBOOT)
 - `FRDM-K82F`/`FRDM-KL82Z` - Flashing via CMSIS-DAP (mounted directoy)
 
-### Debugging <a id="debugtemplate"></a>
+### Debugging <a name="debugtemplate"></a>
 
 Debugging requires an external *Debug Probe*. We use a [SEGGER JLink](https://www.segger.com/jlink-debug-probes.html)
 and its GDB server together with [GDB](https://www.gnu.org/software/gdb/). Debugging requires to
@@ -177,7 +177,9 @@ make ubirch-template-gdb
 
 Happy debugging!
 
-## Additional Information <a id="additional"></a>
+## Additional Information <a name="additional"></a>
+
+
 
 The toolchain libraries and board specific information is available in the individual sub projects:
 
@@ -191,7 +193,7 @@ The toolchain libraries and board specific information is available in the indiv
   - [Crypto Support](md_ubirch-board-crypto_README.html)
 - [__Example Code__](https://github.com/ubirch/ubirch-board-examples)
 
-## License <a id="license"></a>
+## License <a name="license"></a>
 
 __Copyright &copy; 2016 [ubirch](http://ubirch.com) GmbH, Author: Matthias L. Jugel__
 
