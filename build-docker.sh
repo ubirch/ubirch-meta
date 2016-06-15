@@ -26,9 +26,22 @@ function build_software() {
   fi
 }
 
+function link_repos() {
+  REPOLIST="ubirch-kinetis-sdk ubirch-kinetis-sdk-package ubirch-wolfssl ubirch-wolfssl-package ubirch-arm-toolchain ubirch-board-crypto ubirch-board-firmware"
+
+  for repo in ${REPOLIST} ; do
+    #statements
+    if [[ -d ../${repo} ]]; then
+      #statements
+      ln -s ../${repo} .
+    fi
+  done
+
+}
 case "$1" in
     build)
         init
+        link_repos
         build_software
         ;;
     *)
