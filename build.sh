@@ -1,6 +1,7 @@
 #! /bin/bash
 # do an out-of-source build for all configurations
 BUILDS="MinSizeRel"
+TARGET="all"
 for arg in "$@"
 do
   case $arg in
@@ -32,6 +33,10 @@ do
       BUILDS="RelWithDebInfo MinSizeRel Release Debug"
       shift
       ;;
+    -d)
+      TARGET="all-doc"
+      shift
+      ;;
     *)
       ;;
   esac
@@ -46,6 +51,6 @@ do
     (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DUPDATE=1)
   fi
   echo "Building: $BUILD_TYPE"
-  (cd build/$BUILD_TYPE; make clean all)
+  (cd build/$BUILD_TYPE; make clean $TARGET)
   unset UPDATE
 done
