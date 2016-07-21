@@ -49,6 +49,8 @@ set(UBIRCH_RELEASE_TAG "master" CACHE STRING "tag for the current release")
 update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${UBIRCH_RELEASE_TAG})
 # Kinetis SDK (download only)
 update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git ${UBIRCH_RELEASE_TAG})
+# WolfSSL (w/ hw crypto by NXP, download only)
+update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl-nxp ${UBIRCH_RELEASE_TAG})
 # WolfSSL (download only)
 update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
 # Kinetis SDK Package
@@ -84,8 +86,10 @@ ExternalProject_Add(ubirch-kinetis-sdk
 ExternalProject_Get_Property(ubirch-kinetis-sdk SOURCE_DIR)
 get_filename_component(SDK_ROOT "${SOURCE_DIR}" REALPATH)
 
+find_path(WOLFSSL_PKG NAMES middleware wolfssl PATHS ubirch-wolfssl-nxp ubirch-wolfssl wolfssl)
+message(STATUS "using ${WOLFSSL_PKG} as wolfSSL implementation")
 ExternalProject_Add(ubirch-wolfssl
-  SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ubirch-wolfssl
+  SOURCE_DIR ${WOLFSSL_PKG}
   DOWNLOAD_COMMAND ""
   CMAKE_COMMAND ""
   BUILD_COMMAND ""
