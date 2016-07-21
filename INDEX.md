@@ -195,8 +195,9 @@ Happy debugging!
 The toolchain libraries and board specific information is available in the individual sub projects:
 
 - __BOARDS__
-  - [ubirch#1 r0.2](md_ubirch-board-firmware_board_ubirch1r02_README.html) (K82F, Cortex-M4)
-  - [FRDM-K82F](md_ubirch-board-firmware_board_frdm_k82f_README.html) (K82F, Cortex-M4)
+  - [ubirch#1 r0.3-k](md_ubirch-board-firmware_board_ubirch1r03k01_README.html) (K82F, Cortex-M4F)
+  - [ubirch#1 r0.2](md_ubirch-board-firmware_board_ubirch1r02_README.html) (K82F, Cortex-M4F)
+  - [FRDM-K82F](md_ubirch-board-firmware_board_frdm_k82f_README.html) (K82F, Cortex-M4F)
   - [FRDM-KL82Z](md_ubirch-board-firmware_board_frdm_kl82z_README.html) (KL82Z, Cortex-M0+)
 - __Development__
   - [CMake ARM Toolchain](md_ubirch-arm-toolchain_README.html)
