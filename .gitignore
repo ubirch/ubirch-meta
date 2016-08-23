@@ -6,6 +6,7 @@ ubirch-board-firmware
 ubirch-kinetis-sdk
 ubirch-kinetis-sdk-package
 ubirch-wolfssl
+ubirch-wolfssl-nxp
 ubirch-wolfssl-package
 .idea
 .DS_Store
