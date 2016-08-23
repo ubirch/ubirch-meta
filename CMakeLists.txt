@@ -50,7 +50,7 @@ update(ubirch-arm-toolchain git@github.com:ubirch/ubirch-arm-toolchain.git ${UBI
 # Kinetis SDK (download only)
 update(ubirch-kinetis-sdk git@github.com:ubirch/ubirch-kinetis-sdk.git ${UBIRCH_RELEASE_TAG})
 # WolfSSL (w/ hw crypto by NXP, download only)
-update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl-nxp ${UBIRCH_RELEASE_TAG})
+update(ubirch-wolfssl-nxp git@github.com:ubirch/ubirch-wolfssl-nxp ${UBIRCH_RELEASE_TAG})
 # WolfSSL (download only)
 update(ubirch-wolfssl git@github.com:ubirch/ubirch-wolfssl kinetis-sdk-2.0)
 # Kinetis SDK Package
