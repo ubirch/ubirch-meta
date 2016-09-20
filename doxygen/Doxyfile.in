@@ -5,6 +5,8 @@ INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/INDEX.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-arm-toolchain/README.md \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/firmware \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/README.md \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/ubirch1r03k01 \
+                         @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/ubirch1r03 \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/ubirch1r02 \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/frdm_k82f \
                          @CMAKE_CURRENT_SOURCE_DIR@/ubirch-board-firmware/board/frdm_kl82z \
