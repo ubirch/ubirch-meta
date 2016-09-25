@@ -65,8 +65,8 @@ ubirch-wolfssl ----------- ubirch-wolfssl-package --+-- [ubirch-board-crypto]
 
 ## Documentation
 
-* After building the meta build the documentation can be found in [docs](docs/html/index.html)
-* An online version of the firmware documentation is hosted on [developer.ubirch.com](http://developer.ubirch.com)
+* After building the meta build the documentation can be found locally in [docs](docs/html/index.html)
+* An online version of the firmware documentation is hosted on [developer.ubirch.com](http://developer.ubirch.com/docs/firmware)
 * You will find the [Kinetis SDK Documentation](ubirch-kinetis-sdk/SDK_2.0_MK82FN256xxx15/docs/Kinetis SDK v.2.0 API Reference Manual/index.html) in the [ubirch-kinetis-sdk](ubirch-kinetis-sdk) directory.
 
 ## License
