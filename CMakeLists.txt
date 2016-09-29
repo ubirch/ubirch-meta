@@ -5,7 +5,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif ()
 
 set(MCUS "MK82F25615" "MKL82Z7") # later add "MKL82Z7"
-set(BOARDS "ubirch1r03k01" "ubirch1r02" "FRDM-K82F" "FRDM-KL82Z")
+set(BOARDS "ubirch1r03" "ubirch1r03k01" "ubirch1r02" "FRDM-K82F" "FRDM-KL82Z")
 
 project(ubirch-meta NONE)
 include(ExternalProject)
