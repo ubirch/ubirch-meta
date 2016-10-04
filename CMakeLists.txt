@@ -181,6 +181,7 @@ if (DOXYGEN_FOUND)
   if (n GREATER 0)
     add_custom_command(TARGET all-doc
       POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E echo -- 'Copying ${IMAGES} --> ${CMAKE_CURRENT_SOURCE_DIR}/docs/html/'
       COMMAND ${CMAKE_COMMAND} -E copy ${IMAGES} ${CMAKE_CURRENT_SOURCE_DIR}/docs/html/
       )
   endif ()
