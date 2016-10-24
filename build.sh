@@ -26,7 +26,7 @@ do
       fi
       ;;
     -u|--update)
-      UPDATE="1"
+      (cd `dirname $0`; for i in *; do [ -d $i ] && (cd $i; pwd; git pull); done)
       shift
       ;;
     -a)
@@ -44,13 +44,12 @@ done
 
 for BUILD_TYPE in $BUILDS
 do
-  if [ "$UPDATE" == "1" -o ! -d build/$BUILD_TYPE ]
+  if [ ! -d build/$BUILD_TYPE ]
   then
     echo "Preparing build: $BUILD_TYPE"
     mkdir -p build/$BUILD_TYPE
-    (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DUPDATE=1)
+    (cd build/$BUILD_TYPE; cmake ../.. -DCMAKE_BUILD_TYPE=$BUILD_TYPE)
   fi
   echo "Building: $BUILD_TYPE"
   (cd build/$BUILD_TYPE; make clean $TARGET)
-  unset UPDATE
 done
