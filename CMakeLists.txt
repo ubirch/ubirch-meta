@@ -31,15 +31,6 @@ function(update dir url branch)
     OUTPUT_VARIABLE OUTPUT
   )
   message("${OUTPUT}")
-  if ($ENV{UPDATE})
-    message("Updating ${url}")
-    execute_process(
-      COMMAND ${GIT_EXECUTABLE} pull
-      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${dir}
-      OUTPUT_VARIABLE OUTPUT
-    )
-    message("${OUTPUT}")
-  endif ()
 endfunction()
 
 # Update or clone repositories
