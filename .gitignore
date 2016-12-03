@@ -10,3 +10,4 @@ ubirch-wolfssl-nxp
 ubirch-wolfssl-package
 .idea
 .DS_Store
+cmake-build-*
