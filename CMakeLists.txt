@@ -95,7 +95,7 @@ foreach (BOARD ${BOARDS})
   # we set the used MCU based on the board
   if (BOARD MATCHES "ubirch1|FRDM-K82F")
     set(MCU "MK82F25615")
-    set(SDK "${SDK_ROOT}/SDK_2.0_MK82FN256xxx15")
+    set(SDK "${SDK_ROOT}/SDK_2.1_MK82FN256xxx15")
   elseif (BOARD MATCHES "FRDM-KL82Z")
     set(MCU "MKL82Z7")
     set(SDK "${SDK_ROOT}/SDK_2.0_MKL82Z128xxx7")
