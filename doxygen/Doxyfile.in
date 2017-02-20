@@ -34,3 +34,4 @@ HTML_FOOTER            = @CMAKE_CURRENT_SOURCE_DIR@/doxygen/doxygen-footer.html
 HTML_EXTRA_STYLESHEET  = @CMAKE_CURRENT_SOURCE_DIR@/doxygen/doxygen-custom.css
 HTML_EXTRA_FILES       = @CMAKE_CURRENT_SOURCE_DIR@/doxygen/doxygen-bootstrap.js \
                          @CMAKE_CURRENT_SOURCE_DIR@/doxygen/ubirch.png
+EXCLUDE_PATTERNS       = */SPIRIT1_Library/*
